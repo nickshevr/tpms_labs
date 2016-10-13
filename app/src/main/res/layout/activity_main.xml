@@ -19,6 +19,21 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="33dp"
         android:id="@+id/textView2" />
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:srcCompat="@drawable/mradd"
+        android:id="@+id/mradd"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_toEndOf="@+id/addition" />
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:srcCompat="@drawable/mrremove"
+        android:id="@+id/mrremove"
+        android:layout_alignTop="@+id/mradd"
+        android:layout_toEndOf="@+id/multiplication" />
 
     <TextView
         android:text="INPUT 1"
@@ -71,7 +86,7 @@
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
-        app:srcCompat="@drawable/division"
+        app:srcCompat="@drawable/division2"
         android:id="@+id/division"
         android:layout_alignTop="@+id/multiplication"
         android:layout_toEndOf="@+id/multiplication"
