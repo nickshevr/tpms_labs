@@ -5,8 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import java.util.Stack;
 
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ImageView additionImageButton = (ImageView) findViewById(R.id.addition);
         ImageView mraddImageButton = (ImageView) findViewById(R.id.mradd);
         ImageView mrremoveImageButton = (ImageView) findViewById(R.id.mrremove);
+        TextView nextActivityButton = (TextView) findViewById(R.id.next);
 
         multiplicationImageButton.setOnClickListener(this);
         substractionImageButton.setOnClickListener(this);
@@ -41,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         divisionImageButton.setOnClickListener(this);
         mrremoveImageButton.setOnClickListener(this);
         mraddImageButton.setOnClickListener(this);
+        nextActivityButton.setOnClickListener(this);
     }
 
 

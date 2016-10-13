@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Observer;
+
 public class TimerActivity extends AppCompatActivity implements View.OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +29,7 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
-    Integer textBoxToInteger() {
-        EditText textBox = (EditText) findViewById(R.id.editText2);
+    Integer textBoxToInteger(EditText textBox) {
         try {
             return new Integer(textBox.getText().toString());
         } catch (NumberFormatException e) {
@@ -38,7 +39,19 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
-    public void calculateMinutes() {
+    public void calculate() {
+        EditText startHoutText = (EditText) findViewById(R.id.startTimeHour);
+        Integer startHour = textBoxToInteger(startHoutText);
 
+        EditText endHoutText = (EditText) findViewById(R.id.endTimeHour);
+        Integer endHour = textBoxToInteger(endHoutText);
+
+        EditText startMinuteText = (EditText) findViewById(R.id.startTimeMinute);
+        Integer startMinute = textBoxToInteger(startMinuteText);
+
+        EditText endMinuteText = (EditText) findViewById(R.id.startTimeHour);
+        Integer endMinute = textBoxToInteger(endMinuteText);
+
+        Integer result = (startHour - endHour *60) + (startMinute - endMinute);
     }
 }
