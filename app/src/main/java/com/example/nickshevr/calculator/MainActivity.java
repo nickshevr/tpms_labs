@@ -10,7 +10,9 @@ import android.widget.ImageView;
 import android.widget.EditText;
 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private static final String LOG_TAG = "FirstActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,19 +68,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Integer firstArgument = this.stringToInt(this.getFirstValue());
         Integer secondArgument = this.stringToInt(this.getSecondValue());
 
+        EditText outputText = (EditText) findViewById(R.id.output);
+        outputText.setText(Integer.toString(firstArgument * secondArgument));
     }
 
     private void substraction() {
         Integer firstArgument = this.stringToInt(this.getFirstValue());
         Integer secondArgument = this.stringToInt(this.getSecondValue());
 
+        EditText outputText = (EditText) findViewById(R.id.output);
+        outputText.setText(Integer.toString(firstArgument - secondArgument));
     }
 
     private void addition() {
         Integer firstArgument = this.stringToInt(this.getFirstValue());
         Integer secondArgument = this.stringToInt(this.getSecondValue());
 
-
+        EditText outputText = (EditText) findViewById(R.id.output);
+        outputText.setText(Integer.toString(firstArgument + secondArgument));
     }
 
 }
