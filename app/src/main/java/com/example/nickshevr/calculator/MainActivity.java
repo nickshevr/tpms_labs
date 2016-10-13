@@ -20,30 +20,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageView multiplicationImageButton = (ImageView) findViewById(R.id.imageView);
-        ImageView substractionImageButton = (ImageView) findViewById(R.id.imageView2);
-        ImageView additionImageButton = (ImageView) findViewById(R.id.imageView3);
+        ImageView divisionImageButton = (ImageView) findViewById(R.id.division);
+        ImageView multiplicationImageButton = (ImageView) findViewById(R.id.multiplication);
+        ImageView substractionImageButton = (ImageView) findViewById(R.id.subtract);
+        ImageView additionImageButton = (ImageView) findViewById(R.id.addition);
 
         multiplicationImageButton.setOnClickListener(this);
         substractionImageButton.setOnClickListener(this);
         additionImageButton.setOnClickListener(this);
+        divisionImageButton.setOnClickListener(this);
     }
 
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.imageView:
+            case R.id.multiplication:
                 multipliaction();
                 break;
-            case R.id.imageView2:
+            case R.id.subtract:
                 substraction();
                 break;
-            case R.id.imageView3:
-                addition();
-                break;
-            case R.id.imageView4:
+            case R.id.division:
                 division();
+                break;
+            case R.id.addition:
+                addition();
                 break;
         }
     }

@@ -54,27 +54,27 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:srcCompat="@drawable/minus"
-        android:id="@+id/imageView2"
-        android:layout_alignTop="@+id/imageView"
-        android:layout_toEndOf="@+id/imageView"
+        android:id="@+id/subtract"
+        android:layout_alignTop="@+id/multiplication"
+        android:layout_toEndOf="@+id/multiplication"
         android:layout_marginStart="22dp" />
 
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:srcCompat="@drawable/plus"
-        android:id="@+id/imageView3"
-        android:layout_alignTop="@+id/imageView"
-        android:layout_toEndOf="@+id/imageView"
+        android:id="@+id/addition"
+        android:layout_alignTop="@+id/multiplication"
+        android:layout_toEndOf="@+id/multiplication"
         android:layout_marginStart="90dp" />
 
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:srcCompat="@drawable/division"
-        android:id="@+id/imageView4"
-        android:layout_alignTop="@+id/imageView"
-        android:layout_toEndOf="@+id/imageView"
+        android:id="@+id/division"
+        android:layout_alignTop="@+id/multiplication"
+        android:layout_toEndOf="@+id/multiplication"
         android:layout_marginStart="160dp" />
 
     <EditText
@@ -85,14 +85,14 @@
         android:id="@+id/output"
         android:textAlignment="center"
         android:layout_marginTop="62dp"
-        android:layout_below="@+id/imageView"
-        android:layout_alignStart="@+id/imageView" />
+        android:layout_below="@+id/multiplication"
+        android:layout_alignStart="@+id/editText2" />
 
     <TextView
         android:text="OUTPUT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView2"
+        android:layout_below="@+id/subtract"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="33dp"
         android:id="@+id/textView" />
@@ -101,7 +101,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:srcCompat="@drawable/error"
-        android:id="@+id/imageView"
+        android:id="@+id/multiplication"
         android:layout_marginTop="33dp"
         android:layout_below="@+id/editText3"
         android:layout_alignParentStart="true"
