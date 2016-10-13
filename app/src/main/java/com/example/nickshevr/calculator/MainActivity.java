@@ -1,5 +1,6 @@
 package com.example.nickshevr.calculator;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -21,6 +22,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //@ToDo Remove this hack
+
+        EditText output = (EditText) findViewById(R.id.output);
+        output.setFocusable(false);
 
         ImageView divisionImageButton = (ImageView) findViewById(R.id.division);
         ImageView multiplicationImageButton = (ImageView) findViewById(R.id.multiplication);
@@ -59,8 +65,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.mradd:
                 addMemory();
                 break;
+            case R.id.next:
+                nextActivity();
+                break;
         }
     }
+
+   public void nextActivity() {
+       Intent intent = new Intent(MainActivity.this, TimerActivity.class);
+       startActivity(intent);
+   }
 
     public void outPutResult(Double output) {
         EditText outputText = (EditText) findViewById(R.id.output);
