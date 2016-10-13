@@ -50,18 +50,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    public void outPutResult(Integer output) {
+    public void outPutResult(Double output) {
         EditText outputText = (EditText) findViewById(R.id.output);
-        outputText.setText(Integer.toString(output));
+        outputText.setText(Double.toString(output));
     }
 
-    public Integer stringToInt(String str) {
+    public Double stringToInt(String str) {
         try {
-            return new Integer(str);
+            return new Double(str);
         } catch (NumberFormatException e) {
             Toast.makeText(this, "Неккоректные данные", Toast.LENGTH_LONG).show();
 
-            return 0;
+            return 0.0;
         }
     }
 
@@ -76,35 +76,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void multipliaction() {
-        Integer firstArgument = this.stringToInt(this.getFirstValue());
-        Integer secondArgument = this.stringToInt(this.getSecondValue());
+        Double firstArgument = this.stringToInt(this.getFirstValue());
+        Double secondArgument = this.stringToInt(this.getSecondValue());
 
         outPutResult(firstArgument * secondArgument);
     }
 
     private void substraction() {
-        Integer firstArgument = this.stringToInt(this.getFirstValue());
-        Integer secondArgument = this.stringToInt(this.getSecondValue());
+        Double firstArgument = this.stringToInt(this.getFirstValue());
+        Double secondArgument = this.stringToInt(this.getSecondValue());
 
         outPutResult(firstArgument - secondArgument);
     }
 
     private void addition() {
-        Integer firstArgument = this.stringToInt(this.getFirstValue());
-        Integer secondArgument = this.stringToInt(this.getSecondValue());
+        Double firstArgument = this.stringToInt(this.getFirstValue());
+        Double secondArgument = this.stringToInt(this.getSecondValue());
 
         outPutResult(firstArgument + secondArgument);
     }
 
     private void division() {
-        Integer firstArgument = this.stringToInt(this.getFirstValue());
-        Integer secondArgument = this.stringToInt(this.getSecondValue());
+        Double firstArgument = this.stringToInt(this.getFirstValue());
+        Double secondArgument = this.stringToInt(this.getSecondValue());
 
         if (secondArgument == 0) {
             Toast.makeText(this, "Деление на 0 невозможно", Toast.LENGTH_LONG).show();
         } else {
-            outPutResult(firstArgument % secondArgument);
+            outPutResult(firstArgument / secondArgument);
         }
     }
-
 }
