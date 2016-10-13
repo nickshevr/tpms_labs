@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         try {
             return new Double(str);
         } catch (NumberFormatException e) {
-            Toast.makeText(this, "Неккоректные данные", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Неккоректные данные", Toast.LENGTH_SHORT).show();
 
             return 0.0;
         }
@@ -86,14 +86,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             result = new Double(output.getText().toString());
             memory.push(result);
         } catch (NumberFormatException e) {
-            Toast.makeText(this, "Нечего запоминать", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Нечего запоминать", Toast.LENGTH_SHORT).show();
         }
     }
 
     public void popMemory() {
         EditText firstText = (EditText) findViewById(R.id.editText2);
         if (memory.empty()) {
-            Toast.makeText(this, "Память калькулятора пуста", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Память калькулятора пуста", Toast.LENGTH_SHORT).show();
         } else {
             firstText.setText(Double.toString(memory.pop()));
         }
@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Double secondArgument = this.stringToDouble(this.getSecondValue());
 
         if (secondArgument == 0) {
-            Toast.makeText(this, "Деление на 0 невозможно", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Деление на 0 невозможно", Toast.LENGTH_SHORT).show();
         } else {
             outPutResult(firstArgument / secondArgument);
         }
