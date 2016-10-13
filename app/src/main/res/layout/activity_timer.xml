@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_timer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.nickshevr.calculator.TimerActivity">
+    <TextView
+        android:text="Start Time: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/startTimeHour"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="32dp"
+        android:id="@+id/textView4" />
+
+    <TextView
+        android:text="End Time: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/endTimeHour"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="32dp"
+        android:id="@+id/textView5" />
+
+    <EditText
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:inputType="number|numberSigned|numberDecimal"
+        android:ems="10"
+        android:id="@+id/startTimeHour"
+        android:textAlignment="center"
+        android:layout_marginTop="140dp"
+        android:layout_marginStart="130dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:inputType="number|numberSigned|numberDecimal"
+        android:ems="10"
+        android:id="@+id/startTimeMinute"
+        android:textAlignment="center"
+        android:layout_alignBaseline="@+id/startTimeHour"
+        android:layout_alignBottom="@+id/startTimeHour"
+        android:layout_toEndOf="@+id/startTimeHour"
+        android:layout_marginStart="30dp" />
+
+    <EditText
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:inputType="number|numberSigned|numberDecimal"
+        android:ems="10"
+        android:id="@+id/endTimeHour"
+        android:textAlignment="center"
+        android:layout_marginTop="240dp"
+        android:layout_marginStart="130dp"
+        />
+
+    <EditText
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:inputType="number|numberSigned|numberDecimal"
+        android:ems="10"
+        android:id="@+id/endTimeMinute"
+        android:textAlignment="center"
+        android:layout_alignBaseline="@+id/endTimeHour"
+        android:layout_alignBottom="@+id/endTimeHour"
+        android:layout_toEndOf="@+id/endTimeHour"
+        android:layout_marginStart="30dp" />
+
+    <Button
+        android:text="Calculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:layout_below="@+id/endTimeHour"
+        android:layout_alignStart="@+id/endTimeHour"
+        android:layout_marginTop="70dp" />
+
+
+</RelativeLayout>
