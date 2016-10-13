@@ -11,6 +11,23 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.nickshevr.calculator.MainActivity">
 
+    <TextView
+        android:text="INPUT 2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:id="@+id/textView2" />
+
+    <TextView
+        android:text="INPUT 1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:id="@+id/textView3" />
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,26 +50,6 @@
         android:layout_below="@+id/editText2"
         android:layout_alignStart="@+id/editText2" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/output"
-        android:textAlignment="center"
-        android:layout_marginTop="100dp"
-        android:layout_below="@+id/editText3"
-        android:layout_alignStart="@+id/editText3" />
-
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/error"
-        android:id="@+id/imageView"
-        android:layout_below="@+id/editText3"
-        android:layout_alignStart="@+id/editText3"
-        android:layout_marginTop="33dp" />
-
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -70,5 +67,44 @@
         android:layout_alignTop="@+id/imageView"
         android:layout_toEndOf="@+id/imageView"
         android:layout_marginStart="90dp" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/division"
+        android:id="@+id/imageView4"
+        android:layout_alignTop="@+id/imageView"
+        android:layout_toEndOf="@+id/imageView"
+        android:layout_marginStart="160dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/output"
+        android:textAlignment="center"
+        android:layout_marginTop="62dp"
+        android:layout_below="@+id/imageView"
+        android:layout_alignStart="@+id/imageView" />
+
+    <TextView
+        android:text="OUTPUT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:id="@+id/textView" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/error"
+        android:id="@+id/imageView"
+        android:layout_marginTop="33dp"
+        android:layout_below="@+id/editText3"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="33dp" />
 
 </RelativeLayout>
