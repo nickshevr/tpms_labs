@@ -1,11 +1,14 @@
 package com.example.nickshevr.calculator;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import java.util.Stack;
 
@@ -22,12 +25,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //@ToDo Remove this hack
+
+        EditText output = (EditText) findViewById(R.id.output);
+        output.setFocusable(false);
+
         ImageView divisionImageButton = (ImageView) findViewById(R.id.division);
         ImageView multiplicationImageButton = (ImageView) findViewById(R.id.multiplication);
         ImageView substractionImageButton = (ImageView) findViewById(R.id.subtract);
         ImageView additionImageButton = (ImageView) findViewById(R.id.addition);
         ImageView mraddImageButton = (ImageView) findViewById(R.id.mradd);
         ImageView mrremoveImageButton = (ImageView) findViewById(R.id.mrremove);
+        TextView nextActivityButton = (TextView) findViewById(R.id.next);
 
         multiplicationImageButton.setOnClickListener(this);
         substractionImageButton.setOnClickListener(this);
@@ -35,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         divisionImageButton.setOnClickListener(this);
         mrremoveImageButton.setOnClickListener(this);
         mraddImageButton.setOnClickListener(this);
+        nextActivityButton.setOnClickListener(this);
     }
 
 
@@ -59,8 +69,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.mradd:
                 addMemory();
                 break;
+            case R.id.next:
+                nextActivity();
+                break;
         }
     }
+
+   public void nextActivity() {
+       Intent intent = new Intent(MainActivity.this, TimerActivity.class);
+       startActivity(intent);
+   }
 
     public void outPutResult(Double output) {
         EditText outputText = (EditText) findViewById(R.id.output);
