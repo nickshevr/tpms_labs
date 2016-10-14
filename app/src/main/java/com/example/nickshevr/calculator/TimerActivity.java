@@ -229,7 +229,7 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
                 int valueToAdd = parseMinute(minute);
                 isTextSetProgrammatically = true;
                 endMinute.setText(Integer.toString(valueToAdd));
-                private boolean isTextSetProgrammatically = false;
+                isTextSetProgrammatically = false;
             }
 
         });
