@@ -121,6 +121,7 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
                 int valueToAdd = parseHour(hour);
                 isTextSetProgrammatically = true;
                 startHour.setText(Integer.toString(valueToAdd));
+                startHour.setSelection(startHour.getText().length());
                 isTextSetProgrammatically = false;
             }
 
@@ -157,6 +158,7 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
                 int valueToAdd = parseHour(hour);
                 isTextSetProgrammatically = true;
                 endHour.setText(Integer.toString(valueToAdd));
+                startHour.setSelection(startHour.getText().length());
                 isTextSetProgrammatically = false;
             }
 
@@ -193,6 +195,7 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
                 int valueToAdd = parseMinute(minute);
                 isTextSetProgrammatically = true;
                 startMinute.setText(Integer.toString(valueToAdd));
+                startHour.setSelection(startHour.getText().length());
                 isTextSetProgrammatically = false;
             }
 
@@ -229,6 +232,7 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
                 int valueToAdd = parseMinute(minute);
                 isTextSetProgrammatically = true;
                 endMinute.setText(Integer.toString(valueToAdd));
+                startHour.setSelection(startHour.getText().length());
                 isTextSetProgrammatically = false;
             }
 
