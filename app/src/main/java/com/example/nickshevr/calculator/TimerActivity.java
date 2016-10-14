@@ -165,6 +165,7 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
         final EditText startMinute = (EditText) findViewById(R.id.startTimeMinute);
 
         startMinute.addTextChangedListener(new TextWatcher() {
+            private boolean isTextSetProgrammatically = false;
 
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -178,10 +179,21 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
 
             @Override
             public void afterTextChanged(Editable s) {
-                int minute = Integer.parseInt(s.toString());
+                if(isTextSetProgrammatically) {
+                    return;
+                }
+                int minute;
+
+                try {
+                    minute = Integer.parseInt(s.toString());
+                } catch (NumberFormatException e) {
+                    return;
+                }
                 baseObject.setStartMinute(Integer.parseInt(s.toString()));
                 int valueToAdd = parseMinute(minute);
+                isTextSetProgrammatically = true;
                 startMinute.setText(Integer.toString(valueToAdd));
+                isTextSetProgrammatically = false;
             }
 
         });
@@ -203,10 +215,21 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
 
             @Override
             public void afterTextChanged(Editable s) {
-                int minute = Integer.parseInt(s.toString());
+                if(isTextSetProgrammatically) {
+                    return;
+                }
+                int minute;
+
+                try {
+                    minute = Integer.parseInt(s.toString());
+                } catch (NumberFormatException e) {
+                    return;
+                }
                 baseObject.setEndMinute(Integer.parseInt(s.toString()));
                 int valueToAdd = parseMinute(minute);
+                isTextSetProgrammatically = true;
                 endMinute.setText(Integer.toString(valueToAdd));
+                private boolean isTextSetProgrammatically = false;
             }
 
         });
