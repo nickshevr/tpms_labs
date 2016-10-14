@@ -19,21 +19,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="33dp"
         android:id="@+id/textView2" />
-    <ImageView
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        app:srcCompat="@drawable/mradd"
-        android:id="@+id/mradd"
-        android:layout_alignTop="@+id/textView3"
-        android:layout_toEndOf="@+id/addition" />
-
-    <ImageView
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        app:srcCompat="@drawable/mrremove"
-        android:id="@+id/mrremove"
-        android:layout_alignTop="@+id/mradd"
-        android:layout_toEndOf="@+id/multiplication" />
 
     <TextView
         android:text="INPUT 1"
@@ -121,7 +106,7 @@
         android:layout_marginTop="33dp"
         android:layout_below="@+id/editText3"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="45dp" />
+        android:layout_marginStart="50dp" />
 
     <TextView
         android:text="NEXT"
@@ -131,5 +116,26 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="14dp"
         android:id="@+id/next" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/mrremove"
+        android:id="@+id/mrremove"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="21dp"
+        android:layout_toStartOf="@+id/textView"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="70dp"
+        android:layout_above="@+id/editText3" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/mradd"
+        android:id="@+id/mradd"
+        android:layout_alignTop="@+id/mrremove"
+        android:layout_toEndOf="@+id/textView"
+        android:layout_marginStart="15dp" />
 
 </RelativeLayout>
