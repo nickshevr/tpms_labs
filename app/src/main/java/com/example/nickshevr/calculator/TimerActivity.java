@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import java.sql.Time;
 
-public class TimerActivity extends AppCompatActivity implements View.OnClickListener{
+public class TimerActivity extends AppCompatActivity {
     public int parseHour(int hour) {
         if (hour > 24) {
             return 24;
@@ -42,8 +42,8 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
         public int MinuteDifference;
 
         public void setMinuteDifference() {
-            int endTotal = (this.endHour * 60) + this.endMinute;
-            int startTotal = (this.startHour * 60) + this.startMinute;
+            int endTotal = (this.getEndHour() * 60) + this.getEndMinute();
+            int startTotal = (this.getStartHour() * 60) + this.getStartMinute();
 
             this.MinuteDifference = Math.abs(endTotal - startTotal);
         }
@@ -100,6 +100,7 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
         final EditText startHour = (EditText) findViewById(R.id.startTimeHour);
 
         startHour.addTextChangedListener(new TextWatcher() {
+            private boolean isTextSetProgrammatically = false;
 
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -113,11 +114,24 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
 
             @Override
             public void afterTextChanged(Editable s) {
-                int hour = Integer.parseInt(s.toString());
+                if(isTextSetProgrammatically) {
+                    return;
+                }
+
+                int hour;
+
+                try {
+                     hour = Integer.parseInt(s.toString());
+                } catch (NumberFormatException e) {
+                    return;
+                }
                 baseObject.setStartHour(hour);
                 int valueToAdd = parseHour(hour);
+                isTextSetProgrammatically = true;
                 startHour.setText(Integer.toString(valueToAdd));
                 output.setText(Integer.toString(baseObject.getMinuteDifference()));
+                startHour.setSelection(startHour.getText().length());
+                isTextSetProgrammatically = false;
             }
 
         });
@@ -125,6 +139,7 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
         final EditText endHour = (EditText) findViewById(R.id.endTimeHour);
 
         endHour.addTextChangedListener(new TextWatcher() {
+            private boolean isTextSetProgrammatically = false;
 
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -138,10 +153,23 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
 
             @Override
             public void afterTextChanged(Editable s) {
-                int hour = Integer.parseInt(s.toString());
+                if(isTextSetProgrammatically) {
+                    return;
+                }
+                int hour;
+
+                try {
+                    hour = Integer.parseInt(s.toString());
+                } catch (NumberFormatException e) {
+                    return;
+                }
                 baseObject.setEndHour(Integer.parseInt(s.toString()));
                 int valueToAdd = parseHour(hour);
+                isTextSetProgrammatically = true;
                 endHour.setText(Integer.toString(valueToAdd));
+                endHour.setSelection(endHour.getText().length());
+                output.setText(Integer.toString(baseObject.getMinuteDifference()));
+                isTextSetProgrammatically = false;
             }
 
         });
@@ -149,6 +177,7 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
         final EditText startMinute = (EditText) findViewById(R.id.startTimeMinute);
 
         startMinute.addTextChangedListener(new TextWatcher() {
+            private boolean isTextSetProgrammatically = false;
 
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -162,10 +191,23 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
 
             @Override
             public void afterTextChanged(Editable s) {
-                int minute = Integer.parseInt(s.toString());
+                if(isTextSetProgrammatically) {
+                    return;
+                }
+                int minute;
+
+                try {
+                    minute = Integer.parseInt(s.toString());
+                } catch (NumberFormatException e) {
+                    return;
+                }
                 baseObject.setStartMinute(Integer.parseInt(s.toString()));
                 int valueToAdd = parseMinute(minute);
+                isTextSetProgrammatically = true;
                 startMinute.setText(Integer.toString(valueToAdd));
+                output.setText(Integer.toString(baseObject.getMinuteDifference()));
+                startMinute.setSelection(startMinute.getText().length());
+                isTextSetProgrammatically = false;
             }
 
         });
@@ -173,6 +215,7 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
         final EditText endMinute = (EditText) findViewById(R.id.endTimeMinute);
 
         endMinute.addTextChangedListener(new TextWatcher() {
+            private boolean isTextSetProgrammatically = false;
 
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -186,23 +229,27 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
 
             @Override
             public void afterTextChanged(Editable s) {
-                int minute = Integer.parseInt(s.toString());
+                if(isTextSetProgrammatically) {
+                    return;
+                }
+                int minute;
+
+                try {
+                    minute = Integer.parseInt(s.toString());
+                } catch (NumberFormatException e) {
+                    return;
+                }
                 baseObject.setEndMinute(Integer.parseInt(s.toString()));
                 int valueToAdd = parseMinute(minute);
+                isTextSetProgrammatically = true;
                 endMinute.setText(Integer.toString(valueToAdd));
+                output.setText(Integer.toString(baseObject.getMinuteDifference()));
+                endMinute.setSelection(endMinute.getText().length());
+                isTextSetProgrammatically = false;
             }
 
         });
 
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.calculateButton:
-                calculate();
-                break;
-        }
     }
 
     Integer textBoxToInteger(EditText textBox) {

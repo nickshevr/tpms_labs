@@ -83,8 +83,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void outPutResult(Double output) {
         EditText outputText = (EditText) findViewById(R.id.output);
         outputText.setText(Double.toString(output));
-
-        memory.push(output);
     }
 
     public Double stringToDouble(String str) {

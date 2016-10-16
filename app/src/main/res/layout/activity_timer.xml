@@ -79,18 +79,21 @@
         android:text="RESULT:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="81dp"
+        android:id="@+id/textView6"
         android:layout_below="@+id/endTimeHour"
-        android:layout_toStartOf="@+id/endTimeMinute"
-        android:layout_marginTop="79dp"
-        android:id="@+id/textView6" />
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="time"
         android:ems="10"
-        android:layout_marginTop="43dp"
-        android:id="@+id/editText"
+        android:layout_marginTop="49dp"
+        android:id="@+id/output"
+        android:textAlignment="center"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         android:layout_below="@+id/textView6"
         android:layout_centerHorizontal="true" />
 
