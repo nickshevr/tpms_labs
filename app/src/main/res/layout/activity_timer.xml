@@ -32,16 +32,6 @@
         android:layout_height="wrap_content"
         android:inputType="number|numberSigned|numberDecimal"
         android:ems="10"
-        android:id="@+id/startTimeHour"
-        android:textAlignment="center"
-        android:layout_marginStart="130dp"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:inputType="number|numberSigned|numberDecimal"
-        android:ems="10"
         android:id="@+id/startTimeMinute"
         android:textAlignment="center"
         android:layout_alignBaseline="@+id/startTimeHour"
@@ -54,32 +44,55 @@
         android:layout_height="wrap_content"
         android:inputType="number|numberSigned|numberDecimal"
         android:ems="10"
-        android:id="@+id/endTimeHour"
+        android:id="@+id/endTimeMinute"
         android:textAlignment="center"
-        android:layout_marginTop="240dp"
-        android:layout_marginStart="130dp"
-        />
+        android:layout_alignBaseline="@+id/endTimeHour"
+        android:layout_alignBottom="@+id/endTimeHour"
+        android:layout_toEndOf="@+id/endTimeHour"
+        android:layout_marginStart="30dp"
+        android:selectAllOnFocus="false"
+        android:singleLine="false" />
 
     <EditText
         android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:inputType="number|numberSigned|numberDecimal"
         android:ems="10"
-        android:id="@+id/endTimeMinute"
+        android:id="@+id/startTimeHour"
         android:textAlignment="center"
-        android:layout_alignBaseline="@+id/endTimeHour"
-        android:layout_alignBottom="@+id/endTimeHour"
-        android:layout_toEndOf="@+id/endTimeHour"
-        android:layout_marginStart="30dp" />
+        android:layout_marginTop="76dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/textView4" />
 
-    <Button
-        android:text="Calculate"
+    <EditText
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:inputType="number|numberSigned|numberDecimal"
+        android:ems="10"
+        android:id="@+id/endTimeHour"
+        android:textAlignment="center"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/startTimeHour"
+        android:layout_toEndOf="@+id/textView4" />
+
+    <TextView
+        android:text="RESULT:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/calculateButton"
         android:layout_below="@+id/endTimeHour"
-        android:layout_alignStart="@+id/endTimeHour"
-        android:layout_marginTop="70dp" />
+        android:layout_toStartOf="@+id/endTimeMinute"
+        android:layout_marginTop="79dp"
+        android:id="@+id/textView6" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        android:ems="10"
+        android:layout_marginTop="43dp"
+        android:id="@+id/editText"
+        android:layout_below="@+id/textView6"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

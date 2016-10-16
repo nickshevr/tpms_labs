@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.sql.Time;
+
 public class TimerActivity extends AppCompatActivity implements View.OnClickListener{
     public int parseHour(int hour) {
         if (hour > 24) {
@@ -39,11 +41,17 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
 
         public int MinuteDifference;
 
-        public int getMinuteDifference() {
+        public void setMinuteDifference() {
             int endTotal = (this.endHour * 60) + this.endMinute;
             int startTotal = (this.startHour * 60) + this.startMinute;
 
-            return endTotal - startTotal;
+            this.MinuteDifference = Math.abs(endTotal - startTotal);
+        }
+
+        public int getMinuteDifference() {
+            setMinuteDifference();
+
+            return this.MinuteDifference;
         }
 
         public int getStartHour() {
@@ -86,8 +94,8 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer);
 
-        Button calculateButton = (Button) findViewById(R.id.calculateButton);
-        calculateButton.setOnClickListener(this);
+        final EditText output = (EditText) findViewById(R.id.output);
+        output.setFocusable(false);
 
         final EditText startHour = (EditText) findViewById(R.id.startTimeHour);
 
@@ -103,14 +111,13 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
 
             }
 
-            private int mutex = 1;
-
             @Override
             public void afterTextChanged(Editable s) {
                 int hour = Integer.parseInt(s.toString());
                 baseObject.setStartHour(hour);
                 int valueToAdd = parseHour(hour);
                 startHour.setText(Integer.toString(valueToAdd));
+                output.setText(Integer.toString(baseObject.getMinuteDifference()));
             }
 
         });
@@ -187,7 +194,6 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
 
         });
 
-        calculateButton.setOnClickListener(this);
     }
 
     @Override
@@ -223,8 +229,8 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
         Integer endMinute = textBoxToInteger(endMinuteText);
 
         Integer result = (startHour - endHour *60) + (startMinute - endMinute);*/
-        int minuteDiff = baseObject.getMinuteDifference();
+        //int minuteDiff = baseObject.getMinuteDifference();
 
-        Toast.makeText(this, Integer.toString(minuteDiff), Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, Integer.toString(minuteDiff), Toast.LENGTH_LONG).show();
     }
 }
