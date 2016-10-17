@@ -50,8 +50,7 @@
         android:layout_alignBottom="@+id/endTimeHour"
         android:layout_toEndOf="@+id/endTimeHour"
         android:layout_marginStart="30dp"
-        android:selectAllOnFocus="false"
-        android:singleLine="false" />
+        android:selectAllOnFocus="false" />
 
     <EditText
         android:layout_width="70dp"
@@ -76,7 +75,7 @@
         android:layout_toEndOf="@+id/textView4" />
 
     <TextView
-        android:text="RESULT:"
+        android:text="RESULT, min:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="81dp"
